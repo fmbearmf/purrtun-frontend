@@ -20,6 +20,7 @@ declare global {
   const defineNuxtPlugin: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['defineNuxtPlugin']
   const defineNuxtRouteMiddleware: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['defineNuxtRouteMiddleware']
   const defineOptions: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['defineOptions']
+  const definePageMeta: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']
   const definePayloadPlugin: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['definePayloadPlugin']
   const definePayloadReducer: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/payload')['definePayloadReducer']
   const definePayloadReviver: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/payload')['definePayloadReviver']
@@ -50,8 +51,8 @@ declare global {
   const nextTick: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['nextTick']
   const onActivated: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onActivated']
   const onBeforeMount: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeMount']
-  const onBeforeRouteLeave: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['onBeforeRouteLeave']
-  const onBeforeRouteUpdate: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['onBeforeRouteUpdate']
+  const onBeforeRouteLeave: typeof import('../vue-router-stub')['onBeforeRouteLeave']
+  const onBeforeRouteUpdate: typeof import('../vue-router-stub')['onBeforeRouteUpdate']
   const onBeforeUnmount: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeUnmount']
   const onBeforeUpdate: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeUpdate']
   const onDeactivated: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onDeactivated']
@@ -108,10 +109,12 @@ declare global {
   const useId: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/id')['useId']
   const useLazyAsyncData: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']
   const useLazyFetch: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']
+  const useLink: typeof import('../vue-router-stub')['useLink']
   const useLoadingIndicator: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/loading-indicator')['useLoadingIndicator']
   const useModel: typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['useModel']
   const useNuxtApp: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['useNuxtApp']
   const useNuxtData: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']
+  const useNuxtDevTools: typeof import('../../node_modules/.pnpm/@nuxt+devtools@1.1.5_@unocss+reset@0.59.0_floating-vue@5.2.2_nuxt@3.11.2_unocss@0.59.0_vite@5.2.8_vue@3.4.21/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']
   const usePreviewMode: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']
   const useRequestEvent: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']
   const useRequestFetch: typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/ssr')['useRequestFetch']
@@ -168,6 +171,7 @@ declare module 'vue' {
     readonly defineNuxtPlugin: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['defineNuxtPlugin']>
     readonly defineNuxtRouteMiddleware: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['defineNuxtRouteMiddleware']>
     readonly defineOptions: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['defineOptions']>
+    readonly definePageMeta: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']>
     readonly definePayloadPlugin: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['definePayloadPlugin']>
     readonly definePayloadReducer: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/payload')['definePayloadReducer']>
     readonly definePayloadReviver: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/payload')['definePayloadReviver']>
@@ -198,8 +202,8 @@ declare module 'vue' {
     readonly nextTick: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeMount']>
-    readonly onBeforeRouteLeave: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['onBeforeRouteLeave']>
-    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['onBeforeRouteUpdate']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('../vue-router-stub')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('../vue-router-stub')['onBeforeRouteUpdate']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeUnmount']>
     readonly onBeforeUpdate: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeUpdate']>
     readonly onDeactivated: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onDeactivated']>
@@ -256,10 +260,12 @@ declare module 'vue' {
     readonly useId: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/id')['useId']>
     readonly useLazyAsyncData: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']>
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']>
+    readonly useLink: UnwrapRef<typeof import('../vue-router-stub')['useLink']>
     readonly useLoadingIndicator: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/loading-indicator')['useLoadingIndicator']>
     readonly useModel: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
+    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/.pnpm/@nuxt+devtools@1.1.5_@unocss+reset@0.59.0_floating-vue@5.2.2_nuxt@3.11.2_unocss@0.59.0_vite@5.2.8_vue@3.4.21/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly usePreviewMode: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']>
     readonly useRequestFetch: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/ssr')['useRequestFetch']>
@@ -309,6 +315,7 @@ declare module '@vue/runtime-core' {
     readonly defineNuxtPlugin: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['defineNuxtPlugin']>
     readonly defineNuxtRouteMiddleware: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['defineNuxtRouteMiddleware']>
     readonly defineOptions: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['defineOptions']>
+    readonly definePageMeta: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']>
     readonly definePayloadPlugin: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['definePayloadPlugin']>
     readonly definePayloadReducer: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/payload')['definePayloadReducer']>
     readonly definePayloadReviver: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/payload')['definePayloadReviver']>
@@ -339,8 +346,8 @@ declare module '@vue/runtime-core' {
     readonly nextTick: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeMount']>
-    readonly onBeforeRouteLeave: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['onBeforeRouteLeave']>
-    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/router')['onBeforeRouteUpdate']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('../vue-router-stub')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('../vue-router-stub')['onBeforeRouteUpdate']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeUnmount']>
     readonly onBeforeUpdate: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onBeforeUpdate']>
     readonly onDeactivated: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['onDeactivated']>
@@ -397,10 +404,12 @@ declare module '@vue/runtime-core' {
     readonly useId: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/id')['useId']>
     readonly useLazyAsyncData: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']>
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']>
+    readonly useLink: UnwrapRef<typeof import('../vue-router-stub')['useLink']>
     readonly useLoadingIndicator: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/loading-indicator')['useLoadingIndicator']>
     readonly useModel: UnwrapRef<typeof import('../../node_modules/.pnpm/vue@3.4.21/node_modules/vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
+    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/.pnpm/@nuxt+devtools@1.1.5_@unocss+reset@0.59.0_floating-vue@5.2.2_nuxt@3.11.2_unocss@0.59.0_vite@5.2.8_vue@3.4.21/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly usePreviewMode: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/ssr')['useRequestEvent']>
     readonly useRequestFetch: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/composables/ssr')['useRequestFetch']>

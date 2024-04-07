@@ -62,6 +62,9 @@
       "assets": [
         "../assets"
       ],
+      "assets/*": [
+        "../assets/*"
+      ],
       "public": [
         "../public"
       ],
@@ -77,6 +80,15 @@
       "vue-demi": [
         "../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
+      "#tailwind-config": [
+        "./tailwind.config"
+      ],
+      "#tailwind-config/*": [
+        "./tailwind.config/*"
+      ],
+      "#icon-collections": [
+        "./icon-collections.mjs"
+      ],
       "#vue-router": [
         "./vue-router-stub"
       ],
@@ -84,7 +96,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/caa60935-7cbd-41ef-bdc0-951acbeccd20.json"
+        "./manifest/meta/dev"
       ],
       "#build": [
         "."
@@ -119,15 +131,19 @@
     "./nuxt.d.ts",
     "../.config/nuxt.*",
     "../**/*",
-    "../@nuxt/devtools/runtime",
-    "../@nuxt/telemetry/runtime",
+    "../node_modules/.pnpm/@nuxtjs+tailwindcss@6.11.4/node_modules/@nuxtjs/tailwindcss/runtime",
+    "../node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_vite@5.2.8_vue@3.4.21/node_modules/nuxt-icon/runtime",
+    "../node_modules/.pnpm/@nuxt+devtools@1.1.5_@unocss+reset@0.59.0_floating-vue@5.2.2_nuxt@3.11.2_unocss@0.59.0_vite@5.2.8_vue@3.4.21/node_modules/@nuxt/devtools/runtime",
+    "../node_modules/.pnpm/@nuxt+telemetry@2.5.3/node_modules/@nuxt/telemetry/runtime",
     ".."
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/node_modules",
-    "../@nuxt/devtools/runtime/server",
-    "../@nuxt/telemetry/runtime/server",
+    "../node_modules/.pnpm/@nuxtjs+tailwindcss@6.11.4/node_modules/@nuxtjs/tailwindcss/runtime/server",
+    "../node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_vite@5.2.8_vue@3.4.21/node_modules/nuxt-icon/runtime/server",
+    "../node_modules/.pnpm/@nuxt+devtools@1.1.5_@unocss+reset@0.59.0_floating-vue@5.2.2_nuxt@3.11.2_unocss@0.59.0_vite@5.2.8_vue@3.4.21/node_modules/@nuxt/devtools/runtime/server",
+    "../node_modules/.pnpm/@nuxt+telemetry@2.5.3/node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
     "../.output"
   ]
