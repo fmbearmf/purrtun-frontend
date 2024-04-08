@@ -3,7 +3,14 @@
         <div class="md:h-12 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
             <div class="text-white order-3 md:order-2 w-full md:w-auto">
                 <ul class="flex font-semibold justify-between">
-                    <li class="md:px-4 md:py-2 text-green-400 hover:text-green-300 hover:font-bold"><a href="/">Home</a></li>
+                    <li class="md:px-4 md:py-2 text-green-400 hover:text-green-300 hover:font-bold"><a href="/#">Home</a></li>
+                    <li class="md:px-4 md:py-2 text-green-400 hover:text-green-300 hover:font-bold"><a href="/leaderboard#">Leaderboard</a></li>
+                    <li class="md:px-4 md:py-2 text-green-400 hover:text-green-300 hover:font-bold"><a href="/portfolio#">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="text-white order-4 md:order-3 w-full md:w-auto">
+                <ul class="flex font-semibold justify-between">
+                    <li class="md:px-4 md:py-2 text-green-400 hover:text-green-300 hover:font-bold"><a href="/auth">Login</a></li>
                 </ul>
             </div>
         </div>

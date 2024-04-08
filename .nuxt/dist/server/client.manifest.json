@@ -7,12 +7,12 @@
     "module": true,
     "resourceType": "script"
   },
-  "/home/bear/.app/purrtun-frontend/node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/entry.js": {
+  "/home/bear/.app/purrtun-frontend/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
     "isEntry": true,
-    "file": "/home/bear/.app/purrtun-frontend/node_modules/.pnpm/nuxt@3.11.2_@unocss+reset@0.59.0_floating-vue@5.2.2_unocss@0.59.0_vite@5.2.8/node_modules/nuxt/dist/app/entry.js"
+    "file": "/home/bear/.app/purrtun-frontend/node_modules/nuxt/dist/app/entry.js"
   }
 }

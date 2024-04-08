@@ -9,6 +9,7 @@
 /// <reference path="types/app.config.d.ts" />
 /// <reference types="vite/client" />
 /// <reference path="types/tailwind.config.d.ts" />
+/// <reference types="@pinia/nuxt" />
 /// <reference path="vue-router-stub.d.ts" />
 /// <reference types="vue-router" />
 /// <reference path="types/middleware.d.ts" />

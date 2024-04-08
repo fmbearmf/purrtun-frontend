@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", ["@pinia/nuxt", {
+    autoImports: ["defineStore", "acceptHMRUpdate"]
+  }]],
+  imports: {
+    dirs: ["stores"]
+  },
   tailwindcss: {
     exposeConfig: true,
     viewer: true,
@@ -16,6 +21,11 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
-  ssr: true,
+  ssr: false,
+  runtimeConfig: {
+    public: {
+      backend: process.env.NUXT_BACKEND,
+    }
+  },
   watch: ["./assets/**/*.css", "./app.vue", "./pages/**/*.vue", "./components/**/*.{vue,js,ts}", "./*.{ts,js}"],
 })
