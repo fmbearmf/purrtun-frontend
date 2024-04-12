@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
-  ssr: false,
+  ssr: true,
   runtimeConfig: {
     public: {
       backend: process.env.NUXT_BACKEND,

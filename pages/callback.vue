@@ -1,17 +1,19 @@
 <template>
-    <h1>{{ 
+    <h1 class="text-black">{{ 
     //@ts-ignore
-    response["access_token"] }}</h1>
+    response }}</h1>
     
 </template>
 
 <script setup lang="ts">
+const { $locally } = useNuxtApp();
+const accessTokenCookie = useCookie("accessToken");
 let response = "";
 
 const conf = useRuntimeConfig();
 const backend = conf.public.backend;
 
-await fetch(backend + "/api/auth", {
+fetch(backend + "/api/auth", {
     method: "POST",
     body: JSON.stringify({
         "accessToken": `${useRoute().query.code}`,
@@ -21,6 +23,21 @@ await fetch(backend + "/api/auth", {
         'Content-Type': 'application/json',
     }
 }).then(async (result) => {
-    response = await result.json();
+    const res = await result.json();
+    response = res;
+
+    if (!res.encryptedToken) {
+        throw new Error("no accessToken returned from the API." + res);
+    }
+
+    if (process.client) {
+        accessTokenCookie.value = res.encryptedToken;
+
+        if (!(accessTokenCookie.value === res.encryptedToken)) {
+            throw new Error("For some reason, your browser failed to properly set the cookie.");
+        }
+
+        navigateTo("/");
+    }
 });
 </script>
