@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter'],
+        kode: ['Kode Mono'],
       }
     },
   },

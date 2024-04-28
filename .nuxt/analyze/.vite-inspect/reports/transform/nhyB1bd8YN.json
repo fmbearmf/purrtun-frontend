@@ -1,0 +1,223 @@
+{
+  "resolvedId": "/home/bear/.app/purrtun-frontend/pages/callback.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <h1 class=\"text-black\">{{ \n    //@ts-ignore\n    response }}</h1>\n    \n</template>\n\n<script setup lang=\"ts\">\nconst { $locally } = useNuxtApp();\nconst accessTokenCookie = useCookie(\"accessToken\", { sameSite: true });\nlet response = \"\";\n\nconst conf = useRuntimeConfig();\nconst backend = conf.public.backend;\n\nfetch(backend + \"/api/auth\", {\n    method: \"POST\",\n    body: JSON.stringify({\n        \"accessToken\": `${useRoute().query.code}`,\n        \"self\": `${String(useRoute().name)}`\n    }),\n    headers: {\n        'Content-Type': 'application/json',\n    }\n}).then(async (result) => {\n    const res = await result.json();\n    response = res;\n\n    if (!res.encryptedToken) {\n        throw new Error(\"no accessToken returned from the API.\" + res);\n    }\n    accessTokenCookie.value = res.encryptedToken;\n\n    if (!(accessTokenCookie.value === res.encryptedToken)) {\n        throw new Error(\"For some reason, your browser failed to properly set the cookie.\");\n    }\n\n    navigateTo(\"/\");\n});\n</script>",
+      "start": 1712988197381,
+      "end": 1712988197678,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712988197678,
+      "end": 1712988197678,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712988197678,
+      "end": 1712988197678,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712988197678,
+      "end": 1712988197679,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712988197679,
+      "end": 1712988197679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712988197679,
+      "end": 1712988197679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712988197679,
+      "end": 1712988197679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712988197679,
+      "end": 1712988197679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/bear/.app/purrtun-frontend/pages/callback.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/bear/.app/purrtun-frontend/pages/callback.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1712988197679,
+      "end": 1712988198043,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712988198043,
+      "end": 1712988198043,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712988198043,
+      "end": 1712988198043,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712988198043,
+      "end": 1712988198043,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712988198043,
+      "end": 1712988198043,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712988198043,
+      "end": 1712988198043,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712988198044,
+      "end": 1712988198044,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712988198044,
+      "end": 1712988198045,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712988198045,
+      "end": 1712988198045,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/home/bear/.app/purrtun-frontend/pages/callback.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1712988198045,
+      "end": 1712988198045,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712988198046,
+      "end": 1712988198046,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712988198046,
+      "end": 1712988198046,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712988198046,
+      "end": 1712988198046,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712988198046,
+      "end": 1712988198046,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712988198046,
+      "end": 1712988198046,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712988198046,
+      "end": 1712988198046,
+      "order": "normal"
+    }
+  ]
+}

@@ -13,16 +13,16 @@
           <!-- Desktop menu -->
           <div class="hidden md:flex flex-grow items-center justify-center">
             <div class="flex items-center space-x-4">
-              <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">Home</a>
-              <a href="/leaderboard" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">Leaderboard</a>
-              <a href="/portfolio" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">Portfolio</a>
-              <a href="/order" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">Order</a>
+              <a href="/" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Home</a>
+              <a href="/leaderboard" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Leaderboard</a>
+              <a href="/portfolio" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Portfolio</a>
+              <a href="/order" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Order</a>
             </div>
           </div>
   
           <!-- Mobile menu button -->
           <div class="flex md:hidden">
-            <button @click="toggleMobileMenu" class="text-gray-300 hover:text-white focus:outline-none focus:text-white">
+            <button @click="toggleMobileMenu" class="text-green-700 hover:text-green-500 focus:outline-none focus:text-green-500">
               <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
@@ -34,10 +34,10 @@
       <!-- Mobile menu -->
       <div :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-          <a href="/leaderboard" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Leaderboard</a>
-          <a href="/portfolio" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-          <a href="/order" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Order</a>
+          <a href="/" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+          <a href="/leaderboard" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Leaderboard</a>
+          <a href="/portfolio" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+          <a href="/order" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Order</a>
         </div>
       </div>
     </nav>

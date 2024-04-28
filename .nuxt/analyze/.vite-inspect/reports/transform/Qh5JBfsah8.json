@@ -1,0 +1,239 @@
+{
+  "resolvedId": "/home/bear/.app/purrtun-frontend/pages/callback.vue?macro=true&vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"text-black\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'callback',\n  setup(__props) {\n\nconst { $locally } = useNuxtApp();\nconst accessTokenCookie = useCookie(\"accessToken\", { sameSite: true });\nlet response = \"\";\n\nconst conf = useRuntimeConfig();\nconst backend = conf.public.backend;\n\nfetch(backend + \"/api/auth\", {\n    method: \"POST\",\n    body: JSON.stringify({\n        \"accessToken\": `${useRoute().query.code}`,\n        \"self\": `${String(useRoute().name)}`\n    }),\n    headers: {\n        'Content-Type': 'application/json',\n    }\n}).then(async (result) => {\n    const res = await result.json();\n    response = res;\n\n    if (!res.encryptedToken) {\n        throw new Error(\"no accessToken returned from the API.\" + res);\n    }\n    accessTokenCookie.value = res.encryptedToken;\n\n    if (!(accessTokenCookie.value === res.encryptedToken)) {\n        throw new Error(\"For some reason, your browser failed to properly set the cookie.\");\n    }\n\n    navigateTo(\"/\");\n});\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"h1\", _hoisted_1, _toDisplayString(//@ts-ignore\n    _unref(response)), 1))\n}\n}\n\n})",
+      "start": 1712988198054,
+      "end": 1712988198054
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712988198054,
+      "end": 1712988198054,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712988198054,
+      "end": 1712988198054,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712988198054,
+      "end": 1712988198054,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712988198054,
+      "end": 1712988198054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"text-black\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"callback\",\n  setup(__props) {\n    const { $locally } = useNuxtApp();\n    const accessTokenCookie = useCookie(\"accessToken\", { sameSite: true });\n    let response = \"\";\n    const conf = useRuntimeConfig();\n    const backend = conf.public.backend;\n    fetch(backend + \"/api/auth\", {\n      method: \"POST\",\n      body: JSON.stringify({\n        \"accessToken\": `${useRoute().query.code}`,\n        \"self\": `${String(useRoute().name)}`\n      }),\n      headers: {\n        \"Content-Type\": \"application/json\"\n      }\n    }).then(async (result) => {\n      const res = await result.json();\n      response = res;\n      if (!res.encryptedToken) {\n        throw new Error(\"no accessToken returned from the API.\" + res);\n      }\n      accessTokenCookie.value = res.encryptedToken;\n      if (!(accessTokenCookie.value === res.encryptedToken)) {\n        throw new Error(\"For some reason, your browser failed to properly set the cookie.\");\n      }\n      navigateTo(\"/\");\n    });\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"h1\", _hoisted_1, _toDisplayString(\n        //@ts-ignore\n        _unref(response)\n      ), 1);\n    };\n  }\n});\n",
+      "start": 1712988198054,
+      "end": 1712988198103,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/bear/.app/purrtun-frontend/pages/callback.vue?macro=true&vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"text-black\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'callback',\n  setup(__props) {\n\nconst { $locally } = useNuxtApp();\nconst accessTokenCookie = useCookie(\"accessToken\", { sameSite: true });\nlet response = \"\";\n\nconst conf = useRuntimeConfig();\nconst backend = conf.public.backend;\n\nfetch(backend + \"/api/auth\", {\n    method: \"POST\",\n    body: JSON.stringify({\n        \"accessToken\": `${useRoute().query.code}`,\n        \"self\": `${String(useRoute().name)}`\n    }),\n    headers: {\n        'Content-Type': 'application/json',\n    }\n}).then(async (result) => {\n    const res = await result.json();\n    response = res;\n\n    if (!res.encryptedToken) {\n        throw new Error(\"no accessToken returned from the API.\" + res);\n    }\n    accessTokenCookie.value = res.encryptedToken;\n\n    if (!(accessTokenCookie.value === res.encryptedToken)) {\n        throw new Error(\"For some reason, your browser failed to properly set the cookie.\");\n    }\n\n    navigateTo(\"/\");\n});\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"h1\", _hoisted_1, _toDisplayString(//@ts-ignore\n    _unref(response)), 1))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,SAAS,QAAQ,mBAAmB,kBAAkB,aAAa,YAAY,sBAAsB,2BAA2B;AAEzI,MAAM,aAAa,EAAE,OAAO,aAAa;AAGzC,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,EAAE,SAAS,IAAI,WAAW;AAChC,UAAM,oBAAoB,UAAU,eAAe,EAAE,UAAU,KAAK,CAAC;AACrE,QAAI,WAAW;AAEf,UAAM,OAAO,iBAAiB;AAC9B,UAAM,UAAU,KAAK,OAAO;AAE5B,UAAM,UAAU,aAAa;AAAA,MACzB,QAAQ;AAAA,MACR,MAAM,KAAK,UAAU;AAAA,QACjB,eAAe,GAAG,SAAS,EAAE,MAAM,IAAI;AAAA,QACvC,QAAQ,GAAG,OAAO,SAAS,EAAE,IAAI,CAAC;AAAA,MACtC,CAAC;AAAA,MACD,SAAS;AAAA,QACL,gBAAgB;AAAA,MACpB;AAAA,IACJ,CAAC,EAAE,KAAK,OAAO,WAAW;AACtB,YAAM,MAAM,MAAM,OAAO,KAAK;AAC9B,iBAAW;AAEX,UAAI,CAAC,IAAI,gBAAgB;AACrB,cAAM,IAAI,MAAM,0CAA0C,GAAG;AAAA,MACjE;AACA,wBAAkB,QAAQ,IAAI;AAE9B,UAAI,EAAE,kBAAkB,UAAU,IAAI,iBAAiB;AACnD,cAAM,IAAI,MAAM,kEAAkE;AAAA,MACtF;AAEA,iBAAW,GAAG;AAAA,IAClB,CAAC;AAED,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,MAAM,YAAY;AAAA;AAAA,QAC1D,OAAO,QAAQ;AAAA,MAAC,GAAG,CAAC;AAAA,IACxB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useNuxtApp, useRuntimeConfig } from '#app/nuxt';\nimport { useCookie } from '#app/composables/cookie';\nimport { useRoute, navigateTo } from '#app/composables/router';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"text-black\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"callback\",\n  setup(__props) {\n    const { $locally } = useNuxtApp();\n    const accessTokenCookie = useCookie(\"accessToken\", { sameSite: true });\n    let response = \"\";\n    const conf = useRuntimeConfig();\n    const backend = conf.public.backend;\n    fetch(backend + \"/api/auth\", {\n      method: \"POST\",\n      body: JSON.stringify({\n        \"accessToken\": `${useRoute().query.code}`,\n        \"self\": `${String(useRoute().name)}`\n      }),\n      headers: {\n        \"Content-Type\": \"application/json\"\n      }\n    }).then(async (result) => {\n      const res = await result.json();\n      response = res;\n      if (!res.encryptedToken) {\n        throw new Error(\"no accessToken returned from the API.\" + res);\n      }\n      accessTokenCookie.value = res.encryptedToken;\n      if (!(accessTokenCookie.value === res.encryptedToken)) {\n        throw new Error(\"For some reason, your browser failed to properly set the cookie.\");\n      }\n      navigateTo(\"/\");\n    });\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"h1\", _hoisted_1, _toDisplayString(\n        //@ts-ignore\n        _unref(response)\n      ), 1);\n    };\n  }\n});\n",
+      "start": 1712988198104,
+      "end": 1712988198106,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/I,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712988198106,
+      "end": 1712988198106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "normal"
+    }
+  ]
+}

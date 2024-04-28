@@ -1,1 +1,6 @@
-export { default } from "file:///home/bear/.app/purrtun-frontend/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+const entrySpa = () => {
+};
+export {
+  entrySpa as default
+};
+//# sourceMappingURL=server.mjs.map

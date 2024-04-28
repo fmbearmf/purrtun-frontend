@@ -1,0 +1,230 @@
+{
+  "resolvedId": "/home/bear/.app/purrtun-frontend/pages/auth.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'auth',\n  setup(__props) {\n\nconst conf = useRuntimeConfig();\nconst backend = conf.public.backend;\nnavigateTo(String(backend + \"/api/bounce?callbackUri=callback\"), { external: true });\n\nreturn (_ctx: any,_cache: any) => {\n  return null\n}\n}\n\n})",
+      "start": 1712988198053,
+      "end": 1712988198053
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712988198053,
+      "end": 1712988198053,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712988198053,
+      "end": 1712988198053,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712988198053,
+      "end": 1712988198053,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712988198053,
+      "end": 1712988198053,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"auth\",\n  setup(__props) {\n    const conf = useRuntimeConfig();\n    const backend = conf.public.backend;\n    navigateTo(String(backend + \"/api/bounce?callbackUri=callback\"), { external: true });\n    return (_ctx, _cache) => {\n      return null;\n    };\n  }\n});\n",
+      "start": 1712988198053,
+      "end": 1712988198103,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/bear/.app/purrtun-frontend/pages/auth.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'auth',\n  setup(__props) {\n\nconst conf = useRuntimeConfig();\nconst backend = conf.public.backend;\nnavigateTo(String(backend + \"/api/bounce?callbackUri=callback\"), { external: true });\n\nreturn (_ctx: any,_cache: any) => {\n  return null\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AAGpD,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,OAAO,iBAAiB;AAC9B,UAAM,UAAU,KAAK,OAAO;AAC5B,eAAW,OAAO,UAAU,kCAAkC,GAAG,EAAE,UAAU,KAAK,CAAC;AAEnF,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAO;AAAA,IACT;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712988198103,
+      "end": 1712988198103,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712988198103,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712988198104,
+      "end": 1712988198104,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useRuntimeConfig } from '#app/nuxt';\nimport { navigateTo } from '#app/composables/router';\nimport { defineComponent as _defineComponent } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"auth\",\n  setup(__props) {\n    const conf = useRuntimeConfig();\n    const backend = conf.public.backend;\n    navigateTo(String(backend + \"/api/bounce?callbackUri=callback\"), { external: true });\n    return (_ctx, _cache) => {\n      return null;\n    };\n  }\n});\n",
+      "start": 1712988198104,
+      "end": 1712988198106,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712988198106,
+      "end": 1712988198106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712988198106,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712988198107,
+      "end": 1712988198107,
+      "order": "normal"
+    }
+  ]
+}

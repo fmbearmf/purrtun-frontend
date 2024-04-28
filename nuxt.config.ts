@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   modules: ["@nuxtjs/tailwindcss", "nuxt-icon", ["@pinia/nuxt", {
     autoImports: ["defineStore", "acceptHMRUpdate"]
   }]],
@@ -21,7 +27,7 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
-  ssr: true,
+  ssr: false,
   runtimeConfig: {
     public: {
       backend: process.env.NUXT_BACKEND,

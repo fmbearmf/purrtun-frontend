@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 const { $locally } = useNuxtApp();
-const accessTokenCookie = useCookie("accessToken");
+const accessTokenCookie = useCookie("accessToken", { sameSite: true });
 let response = "";
 
 const conf = useRuntimeConfig();
@@ -29,15 +29,12 @@ fetch(backend + "/api/auth", {
     if (!res.encryptedToken) {
         throw new Error("no accessToken returned from the API." + res);
     }
+    accessTokenCookie.value = res.encryptedToken;
 
-    if (process.client) {
-        accessTokenCookie.value = res.encryptedToken;
-
-        if (!(accessTokenCookie.value === res.encryptedToken)) {
-            throw new Error("For some reason, your browser failed to properly set the cookie.");
-        }
-
-        navigateTo("/");
+    if (!(accessTokenCookie.value === res.encryptedToken)) {
+        throw new Error("For some reason, your browser failed to properly set the cookie.");
     }
+
+    navigateTo("/");
 });
 </script>
