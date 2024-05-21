@@ -13,10 +13,8 @@
           <!-- Desktop menu -->
           <div class="hidden md:flex flex-grow items-center justify-center">
             <div class="flex items-center space-x-4">
-              <a href="/" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Home</a>
-              <a href="/leaderboard" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Leaderboard</a>
-              <a href="/portfolio" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Portfolio</a>
-              <a href="/order" class="text-green-700 hover:bg-gray-700 hover:text-green-500 px-3 py-2 rounded-md text-sm font-bold">Order</a>
+              <a href="/" class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold">Home</a>
+              <a href="/" class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold">Dashboard</a>
             </div>
           </div>
   
@@ -35,9 +33,7 @@
       <div :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a href="/" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-          <a href="/leaderboard" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Leaderboard</a>
-          <a href="/portfolio" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-          <a href="/order" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Order</a>
+          <a href="/dashboard" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
         </div>
       </div>
     </nav>

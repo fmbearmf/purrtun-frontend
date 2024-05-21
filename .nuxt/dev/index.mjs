@@ -101,7 +101,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "backend": "http://localhost:5995"
+    "backend": "https://api.purrtun.com"
   }
 };
 const envOptions = {

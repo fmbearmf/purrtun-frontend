@@ -2,28 +2,30 @@
     <h1 class="text-black">{{ 
     //@ts-ignore
     response }}</h1>
-    
 </template>
 
 <script setup lang="ts">
+import { pack, unpack } from "msgpackr";
+
 const { $locally } = useNuxtApp();
-const accessTokenCookie = useCookie("accessToken", { sameSite: true });
-let response = "";
+const accessTokenCookie = useCookie("token", { sameSite: true, maxAge: 60 * 60 * 24 });
+let response = new Object();
 
 const conf = useRuntimeConfig();
 const backend = conf.public.backend;
 
-fetch(backend + "/api/auth", {
+fetch(backend + "/auth", {
     method: "POST",
-    body: JSON.stringify({
+    body: pack({
         "accessToken": `${useRoute().query.code}`,
         "self": `${String(useRoute().name)}`
     }),
     headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/msgpack',
     }
-}).then(async (result) => {
-    const res = await result.json();
+}).then(response => response.arrayBuffer())
+.then(arrayBuffer => unpack(new Uint8Array(arrayBuffer)))
+.then((res) => {
     response = res;
 
     if (!res.encryptedToken) {

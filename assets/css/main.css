@@ -6,4 +6,5 @@
 
 * {
     @apply text-green-500;
+    @apply leading-8;
 }
