@@ -1,19 +1,8 @@
 <template>
-    <div class="bg-black min-h-dvh flex flex-col">
-        <Header />
-        <div class="flex-grow flex flex-col sm:flex-row my-5">
-            <div class="flex-grow sm:w-1/3 hidden md:block">
-                <!-- Ad space maybe-->
-            </div>
-            <div class="flex-grow sm:w-1/3 mx-4">
-                <h1 class="text-center text-5xl font-kode font-bold">Registration</h1>
-                <h2 class="text-3xl font-kode">If you're here, it's because you need a Purrtun account!</h2>
-                <h2 class="text-3xl font-kode">Just wait, you'll be registered automatically (if you're registered).</h2>
-            </div>
-            <div class="flex-grow sm:w-1/3 hidden md:block">
-                <!-- Ad space maybe-->
-            </div>
-        </div>
+    <div class="flex-grow sm:w-1/3 mx-4">
+        <h1 class="text-center text-5xl font-kode font-bold">Registration</h1>
+        <h2 class="text-3xl font-kode">If you're here, it's because you need a Purrtun account!</h2>
+        <h2 class="text-3xl font-kode">Just wait, you'll be registered automatically (if you're registered).</h2>
     </div>
 </template>
 
