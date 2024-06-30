@@ -1,4 +1,5 @@
 import { pack, unpack } from 'msgpackr';
+import {navigateTo} from "nuxt/app";
 
 export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
     const accessTokenCookie = useCookie("token", { sameSite: true, maxAge: 60 * 60 * 24 });
@@ -35,7 +36,7 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
                 if (process.client) {
                     $cookies.remove('token');
                 }
-                redirect('/');
+                navigateTo('/');
                 return;
             }
 
@@ -44,9 +45,9 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
             const code = parseInt(error.response && error.response.status);
 
             if (code === 401) {
-                redirect('/register');
+                navigateTo('/register');
             } else if (code === 400) {
-                redirect('/auth');
+                navigateTo('/auth');
             }
 
             throw error;
