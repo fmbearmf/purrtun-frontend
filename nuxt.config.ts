@@ -7,9 +7,13 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", ["@pinia/nuxt", {
-    autoImports: ["defineStore", "acceptHMRUpdate"]
-  }]],
+  modules: [
+      "@nuxtjs/tailwindcss",
+    "nuxt-icon",
+    ["@pinia/nuxt",
+      {autoImports: ["defineStore", "acceptHMRUpdate"],}
+    ]
+  ],
   imports: {
     dirs: ["stores"]
   },
@@ -23,9 +27,13 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
+  plugins: ['~/plugins/api.ts'],
   css: ["./assets/css/main.css"],
   experimental: {
     payloadExtraction: false,
+  },
+  axios: {
+    baseURL: process.env.NUXT_BACKEND
   },
   ssr: false,
   runtimeConfig: {
