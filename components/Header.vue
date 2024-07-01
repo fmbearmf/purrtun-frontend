@@ -13,8 +13,14 @@
           <!-- Desktop menu -->
           <div class="hidden md:flex flex-grow items-center justify-center">
             <div class="flex items-center space-x-4">
-              <a href="/" class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold">Home</a>
-              <a href="/" class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold">Dashboard</a>
+              <nuxt-link
+                  v-for="header in headers"
+                  :key="header.name"
+                  :to="`${header.route}`"
+                  class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold"
+              >
+                {{ header.name }}
+              </nuxt-link>
             </div>
           </div>
   
@@ -32,8 +38,14 @@
       <!-- Mobile menu -->
       <div :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="/" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-          <a href="/dashboard" class="text-green-700 hover:bg-gray-700 hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+          <nuxt-link
+              v-for="header in headers"
+              :key="header.name"
+              :to="`${header.route}`"
+              class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold"
+          >
+            {{ header.name }}
+          </nuxt-link>
         </div>
       </div>
     </nav>
@@ -43,7 +55,15 @@
   export default {
     data() {
       return {
-        isMobileMenuOpen: false
+        isMobileMenuOpen: false,
+        headers: [
+          //  Portfolio, market prices, charms, gembox
+          { name: "Home", route: "" },
+          //  Market prices, charts, ordering
+          { name: "Market", route: "/market" },
+          //  Leaderboard
+          { name: "Leaderboard", route: "/leaderboard" }
+        ]
       }
     },
     methods: {
