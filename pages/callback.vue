@@ -1,7 +1,5 @@
 <template>
-    <h1 class="text-black">{{ 
-    //@ts-ignore
-    response }}</h1>
+    <h1 class="text-black">{{ response }}</h1>
 </template>
 
 <script setup lang="ts">
@@ -22,7 +20,8 @@ fetch(backend + "/auth", {
     }),
     headers: {
         'Content-Type': 'application/msgpack',
-    }
+    },
+    credentials: "include"
 }).then(response => response.arrayBuffer())
 .then(arrayBuffer => unpack(new Uint8Array(arrayBuffer)))
 .then((res) => {
