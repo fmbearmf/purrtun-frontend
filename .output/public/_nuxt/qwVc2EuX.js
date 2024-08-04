@@ -1,1 +1,0 @@
-import{d as a,q as e,l as c}from"./BZOgez34.js";const i=a({__name:"auth",setup(t){const n=c().public.backend;return e(n+"/api/bounce?callbackUri=callback",{external:!0}),(r,s)=>null}});export{i as default};
