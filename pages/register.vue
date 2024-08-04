@@ -7,13 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { useRuntimeConfig, navigateTo } from 'nuxt/app';
-
-// Get the API plugin
+import { navigateTo } from 'nuxt/app';
 const { $api } = useNuxtApp();
-
-const conf = useRuntimeConfig();
-const backend = conf.public.backend;
 
 try {
   const response = await $api("/register", {method: "POST"});

@@ -25,17 +25,14 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
         }
 
         const headers = {
-            'Content-Type': 'application/msgpack',
+            'Content-Type': 'application/json',
             ...options.headers,
             'Authorization': `Bearer ${accessToken}`,
         };
 
-        const packedBody = pack(options.body || {});
-
         const extendedOptions = {
             ...options,
             headers,
-            body: packedBody,
         };
 
         try {
@@ -43,14 +40,11 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
                 baseURL: backend,
                 ...extendedOptions,
             });
-            const arrayBuffer = await response.arrayBuffer();
-            const data = unpack(new Uint8Array(arrayBuffer));
 
-            return data;
+            return response;
         } catch (error) {
             const code = parseInt(error.response && error.response.status);
-            const errorData = unpack(await error.data.arrayBuffer())
-
+            const errorData = error.data
             if (code === 403) { // expired token
                 if (!errorData.shouldRegister) {
                     // Try to refresh the token
@@ -63,12 +57,11 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
                             ...extendedOptions,
                             headers,
                         });
-                        const retryArrayBuffer = await retryResponse.arrayBuffer();
-                        return unpack(new Uint8Array(retryArrayBuffer));
+                        return retryResponse
                     } catch (refreshError) {
                         navigateTo('/auth');
                     }
-                } else {
+                } else { // doesnt have an account
                     navigateTo('/register');
                 }
             }
