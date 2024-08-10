@@ -42,7 +42,7 @@
               v-for="header in headers"
               :key="header.name"
               :to="`${header.route}`"
-              class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 px-3 py-2 rounded-md text-sm font-bold"
+              class="text-green-700 hover:text-emerald-200 hover:outline hover:outline-green-400 hover:outline-4 !my-0 px-3 py-2 rounded-md text-sm font-bold"
           >
             {{ header.name }}
           </nuxt-link>
