@@ -1,5 +1,4 @@
-import { pack, unpack } from 'msgpackr';
-import {navigateTo} from "nuxt/app";
+import {navigateTo, useRoute} from "nuxt/app";
 
 export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
     const accessTokenCookie = useCookie("token", { sameSite: true, maxAge: 60 * 60 * 24 });
@@ -8,7 +7,7 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
     const refreshAccessToken = async () => {
         const response = await $fetch('/refresh', {
             baseURL: backend,
-            method: 'POST',
+            method: 'GET',
             credentials: 'include', // Make sure cookies are included
             headers: {
                 "Content-Type": "application/json"
@@ -19,6 +18,9 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
     };
 
     const customFetch = async (url, options = {}) => {
+        const route = useRoute();
+        const currentPath = route.fullPath
+
         let accessToken = accessTokenCookie.value;
         if (!accessToken) {
             navigateTo('/auth');
@@ -58,14 +60,13 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
                             headers,
                         });
                         return retryResponse
-                    } catch (refreshError) {
-                        navigateTo('/auth');
+                    } catch (refreshError) { // refresh token expired. Log in again
+                        navigateTo("/auth");
                     }
                 } else { // doesnt have an account
-                    navigateTo('/register');
+                    navigateTo(`/register?redirect=${encodeURIComponent(currentPath)}`);
                 }
             }
-
             throw error;
         }
     };

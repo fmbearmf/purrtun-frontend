@@ -3,19 +3,19 @@
 </template>
 
 <script setup lang="ts">
-import { useCookie, useRuntimeConfig, navigateTo, useRoute } from '#imports';
 
 const accessTokenCookie = useCookie("token", { sameSite: true, maxAge: 60 * 60 * 24 });
 let response = ref(null);
 
 const conf = useRuntimeConfig();
 const backend = conf.public.backend;
+const route = useRoute();
 
 fetch(backend + "/auth", {
   method: "POST",
   body: JSON.stringify({
-    "accessToken": `${useRoute().query.code}`,
-    "self": `${String(useRoute().name)}`
+    "accessToken": `${route.query.code}`,
+    "self": `${String(route.name)}`
   }),
   headers: {
     'Content-Type': 'application/json',
@@ -23,7 +23,6 @@ fetch(backend + "/auth", {
   credentials: "include"
 }).then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (!data.encryptedToken) {
         throw new Error("No accessToken returned from the API: " + JSON.stringify(data));
       }

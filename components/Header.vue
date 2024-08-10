@@ -37,7 +37,7 @@
   
       <!-- Mobile menu -->
       <div :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-grow items-center justify-center">
           <nuxt-link
               v-for="header in headers"
               :key="header.name"
@@ -50,27 +50,46 @@
       </div>
     </nav>
   </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        isMobileMenuOpen: false,
-        headers: [
-          //  Portfolio, market prices, charms, gembox
-          { name: "Home", route: "" },
-          //  Market prices, charts, ordering
-          { name: "Market", route: "/market" },
-          //  Leaderboard
-          { name: "Leaderboard", route: "/leaderboard" }
-        ]
-      }
-    },
-    methods: {
-      toggleMobileMenu() {
-        this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      }
-    }
+
+<script setup lang="ts">
+import { useCookie } from 'nuxt/app';
+import { ref, onMounted, watch } from 'vue';
+
+const isMobileMenuOpen = ref(false);
+const headers = ref([
+  { name: "Home", route: "/" },
+]);
+
+const signInHeader = [
+  { name: "Portfolio", route: "/portfolio" },
+  { name: "Log out", route: "/logout"}
+]
+
+const signedOutHeader = [
+  { name: "Log in", route: "/auth" }
+]
+
+const accessToken = useCookie("token");
+
+onMounted(() => {
+  updateHeaders(accessToken.value);
+});
+
+watch(accessToken, (newToken) => {
+  updateHeaders(newToken);
+});
+
+const updateHeaders = (token: string | null) => {
+  headers.value = [{ name: "Home", route: "/" }]; // Reset headers
+  if (token) {
+    headers.value.push(...signInHeader);
+  } else {
+    headers.value.push(...signedOutHeader);
   }
-  </script>
+}
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+};
+</script>
   
