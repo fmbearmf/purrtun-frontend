@@ -4,7 +4,8 @@
 
 <script setup lang="ts">
 
-const accessTokenCookie = useCookie("token", { sameSite: true, maxAge: 60 * 60 * 24 });
+const accessTokenCookie = useCookie("accessToken", { sameSite: true, maxAge: 60 * 60 * 24 });
+const idCookie = useCookie("discordId", { sameSite: true, maxAge: 60 * 60 * 24 });
 let response = ref(null);
 
 const conf = useRuntimeConfig();
@@ -23,12 +24,13 @@ fetch(backend + "/auth", {
   credentials: "include"
 }).then((res) => res.json())
     .then((data) => {
-      if (!data.encryptedToken) {
+      if (!data.accessToken) {
         throw new Error("No accessToken returned from the API: " + JSON.stringify(data));
       }
-      accessTokenCookie.value = data.encryptedToken;
+      accessTokenCookie.value = data.accessToken;
+      idCookie.value = data.discordId
 
-      if (!(accessTokenCookie.value === data.encryptedToken)) {
+      if (!(accessTokenCookie.value === data.accessToken)) {
         throw new Error("For some reason, your browser failed to properly set the cookie.");
       }
 

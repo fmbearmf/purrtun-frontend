@@ -54,14 +54,15 @@
 <script setup lang="ts">
 import { useCookie } from 'nuxt/app';
 import { ref, onMounted, watch } from 'vue';
-
+const accessToken = useCookie("accessToken");
+const id = useCookie("discordId");
 const isMobileMenuOpen = ref(false);
 const headers = ref([
   { name: "Home", route: "/" },
 ]);
 
 const signInHeader = [
-  { name: "Portfolio", route: "/portfolio" },
+  { name: "Portfolio", route: `/portfolio/${id.value}` },
   { name: "Log out", route: "/logout"}
 ]
 
@@ -69,7 +70,6 @@ const signedOutHeader = [
   { name: "Log in", route: "/auth" }
 ]
 
-const accessToken = useCookie("token");
 
 onMounted(() => {
   updateHeaders(accessToken.value);

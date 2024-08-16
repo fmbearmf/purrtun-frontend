@@ -1,7 +1,9 @@
 import {navigateTo, useRoute} from "nuxt/app";
 
 export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
-    const accessTokenCookie = useCookie("token", { sameSite: true, maxAge: 60 * 60 * 24 });
+    const accessTokenCookie = useCookie("accessToken", { sameSite: true, maxAge: 60 * 60 * 24 });
+    const idCookie = useCookie("discordId", { sameSite: true, maxAge: 60 * 60 * 24 });
+
     const backend = $config.public.backend;
 
     const refreshAccessToken = async () => {
@@ -14,6 +16,8 @@ export default defineNuxtPlugin(({ $cookies, $config, redirect }) => {
             }
         });
         accessTokenCookie.value = response.accessToken;
+        idCookie.value = response.discordId
+
         return response.accessToken;
     };
 

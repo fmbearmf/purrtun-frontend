@@ -5,7 +5,7 @@
       <h2 class="text-3xl font-kode">Stats<br></h2>
       <h2 class="text-3xl font-kode" :key="cb">|> CatBux: <a class="text-fuchsia-400">{{ Number(cb).toLocaleString() }}</a></h2>
       <h2 class="text-3xl font-kode" :key="job">|> Job: <a class="text-fuchsia-400">{{ job }}</a></h2>
-<!--      <h2 class="text-3xl font-kode" :key="limit">|> CatBux Limit: <a class="text-fuchsia-400">{{ Number(Number(limit) / 100).toLocaleString() }}</a></h2>-->
+      <!--      <h2 class="text-3xl font-kode" :key="limit">|> CatBux Limit: <a class="text-fuchsia-400">{{ Number(Number(limit) / 100).toLocaleString() }}</a></h2>-->
       <h2 class="text-3xl font-kode" :key="totalVal">|> Total Stock Value: <a class="text-fuchsia-400">{{ Number(totalVal).toLocaleString() }}</a></h2>
       <h2 class="text-3xl font-kode"><br>Stocks<br></h2>
       <div :key="response.stocks" v-for="stock in response.stocks">
@@ -20,7 +20,9 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useLoadingStore } from '@/stores/loading';
+import {useRoute} from "nuxt/app";
 const { $api } = useNuxtApp();
+const route = useRoute()
 
 const loadingStore = useLoadingStore();
 let cb = ref("");
@@ -32,7 +34,7 @@ let response: any = ref({});
 const fetchPortfolio = async () => {
 
   try {
-    const data = await $api('/portfolio', { method: 'GET' });
+    const data = await $api(`/portfolio/${route.params.id}`, { method: 'GET' });
     if (data) {
       response.value = data.response;
       cb.value = data.response.catBux;
