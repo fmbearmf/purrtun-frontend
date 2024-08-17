@@ -8,10 +8,10 @@
       <!--      <h2 class="text-3xl font-kode" :key="limit">|> CatBux Limit: <a class="text-fuchsia-400">{{ Number(Number(limit) / 100).toLocaleString() }}</a></h2>-->
       <h2 class="text-3xl font-kode" :key="totalVal">|> Total Stock Value: <a class="text-fuchsia-400">{{ Number(totalVal).toLocaleString() }}</a></h2>
       <h2 class="text-3xl font-kode"><br>Stocks<br></h2>
-      <div :key="response.stocks" v-for="stock in response.stocks">
-        <h2 class="text-3xl font-kode"><br>|> {{ $util.capitalizeFirst(stock.catColor) }}: <br>
-          <a class="text-fuchsia-600">{{ Number(stock.numberOfShares).toLocaleString() }}</a> Shares<br>
-          <a class="text-fuchsia-400">{{ Number(stock.totalValue).toLocaleString() }}</a> CatBux</h2>
+      <div :key="holdings" v-for="holding in holdings">
+        <h2 class="text-3xl font-kode"><br>|> {{ $util.capitalizeFirst(holding.stock.catColor) }}: <br>
+          <a class="text-fuchsia-600">{{ Number(holding.numberOfShares).toLocaleString() }}</a> Shares<br>
+          <a class="text-fuchsia-400">{{ Number(holding.totalValue).toLocaleString() }}</a> CatBux</h2>
       </div>
     </LoadingWrapper>
   </div>
@@ -29,18 +29,19 @@ let cb = ref("");
 let job = ref("");
 let limit = ref("");
 let totalVal = ref("");
-let response: any = ref({});
+let holdings: any = ref([]);
 
 const fetchPortfolio = async () => {
 
   try {
     const data = await $api(`/portfolio/${route.params.id}`, { method: 'GET' });
     if (data) {
-      response.value = data.response;
-      cb.value = data.response.catBux;
-      job.value = data.response.job;
-      limit.value = data.response.limit;
-      totalVal.value = data.response.totalStockValue;
+      console.log(data)
+      holdings.value = data.holdings;
+      cb.value = data.catBux;
+      job.value = data.job;
+      limit.value = data.limit;
+      totalVal.value = data.totalStockValue;
     }
   } catch (error) {
     console.error('Error fetching portfolio:', error);
