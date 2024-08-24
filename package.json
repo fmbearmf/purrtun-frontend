@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.4.10",
     "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@msgpack/msgpack": "^3.0.0-beta2",
+    "@nuxtjs/color-mode": "^3.4.4",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@types/node": "^20.12.5",
     "autoprefixer": "^10.4.19",
