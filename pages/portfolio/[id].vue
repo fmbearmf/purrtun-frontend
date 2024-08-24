@@ -43,7 +43,6 @@ const fetchPortfolio = async () => {
   try {
     const data = await $api(`/portfolio/${route.params.id}`, {method: 'GET'});
     if (data) {
-      console.log(data)
       holdings.value = data.holdings;
       cb.value = data.catBux;
       job.value = data.job;
