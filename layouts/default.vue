@@ -1,5 +1,5 @@
 <template>
-  <div :class="['min-h-dvh flex flex-col transition-colors duration-500', colorModeClass]">
+  <div class="min-h-dvh flex flex-col transition-colors duration-500">
     <Header />
     <div class="flex-grow flex flex-col sm:flex-row my-5">
       <div class="flex-grow sm:w-1/3 hidden md:block">
@@ -12,12 +12,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { computed } from 'vue';
-const colorMode = useColorMode();
-
-const colorModeClass = computed(() => {
-  return colorMode.preference === 'dark' ? 'bg-black' : 'bg-stone-100';
-});
-</script>

@@ -46,7 +46,7 @@ export default defineNuxtConfig({
     watch: ["./assets/**/*.css", "./app.vue", "./pages/**/*.vue", "./components/**/*.{vue,js,ts}", "./*.{ts,js}"],
     colorMode: {
         classSuffix: '',
-        preference: 'light',
-        fallback: 'light'
+        preference: 'dark',
+        fallback: 'dark'
     },
 })

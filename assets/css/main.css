@@ -9,6 +9,10 @@
     @apply leading-8;
 }
 
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 .inline-image {
     height: 1em;
     vertical-align: middle;
