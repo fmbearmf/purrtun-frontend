@@ -54,39 +54,33 @@
 <script setup lang="ts">
 import { useCookie } from 'nuxt/app';
 import { ref, onMounted, watch } from 'vue';
+
 const accessToken = useCookie("accessToken");
-const id = useCookie("discordId");
+const idCookie = useCookie("discordId");
 const isMobileMenuOpen = ref(false);
 const headers = ref([
   { name: "Home", route: "/" },
 ]);
 
-const signInHeader = [
-  { name: "Portfolio", route: `/portfolio/${id.value}` },
-  { name: "Log out", route: "/logout"}
-]
-
-const signedOutHeader = [
-  { name: "Log in", route: "/auth" }
-]
-
+const updateHeaders = () => {
+  headers.value = [{ name: "Home", route: "/" }]; // Reset headers
+  if (accessToken.value) {
+    headers.value.push(
+        { name: "Portfolio", route: `/portfolio/${idCookie.value}` },
+        { name: "Log out", route: "/logout" }
+    );
+  } else {
+    headers.value.push({ name: "Log in", route: "/auth" });
+  }
+};
 
 onMounted(() => {
-  updateHeaders(accessToken.value);
+  updateHeaders();
 });
 
-watch(accessToken, (newToken) => {
-  updateHeaders(newToken);
+watch([accessToken, idCookie], () => {
+  updateHeaders();
 });
-
-const updateHeaders = (token: string | null) => {
-  headers.value = [{ name: "Home", route: "/" }]; // Reset headers
-  if (token) {
-    headers.value.push(...signInHeader);
-  } else {
-    headers.value.push(...signedOutHeader);
-  }
-}
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
