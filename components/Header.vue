@@ -70,7 +70,7 @@ const headers = ref([
 ]);
 
 const updateHeaders = () => {
-  headers.value = [{name: "Home", route: "/"}]; // Reset headers
+  headers.value = [{name: "Home", route: "/"}, {name: "API", route: "/api"}]; // Reset headers
   if (accessToken.value) {
     headers.value.push(
         {name: "Portfolio", route: `/portfolio/${idCookie.value}`},
