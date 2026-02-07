@@ -1,0 +1,14 @@
+services:
+  vue:
+    image: vue:dev
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      NUXT_BACKEND: ${NUXT_BACKEND:-http://localhost:5995/v1/}
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - ..:/app
+      - /app/node_modules

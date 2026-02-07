@@ -1,0 +1,10 @@
+services:
+  vue:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.prod
+      args:
+        NUXT_BACKEND: ${NUXT_BACKEND:-https://api.purrtun.com/v1/}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+FROM node:24-slim AS build
+
+WORKDIR /app
+
+COPY package-lock.json package.json ./
+RUN npm ci
+
+COPY . .
+
+# For a static build, runtime config is baked at build time.
+ARG NUXT_BACKEND
+ENV NUXT_BACKEND=$NUXT_BACKEND
+
+RUN npm run generate
+
+
+FROM nginx:1.27-alpine AS runtime
+
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/.output/public /usr/share/nginx/html
+
+EXPOSE 3000
+
